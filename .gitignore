@@ -1,0 +1,3 @@
+.terraform*
+ssh_public_key
+.vscode

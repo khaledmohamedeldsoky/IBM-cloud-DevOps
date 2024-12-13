@@ -1,0 +1,44 @@
+ containerd خد بالك انك تحمل 
+      containerd ل restart , enable   لازم تعمل 
+ https://k21academy.com/docker-kubernetes/three-node-kubernetes-cluster/
+
+ امشي ورا اللينك دا ف اتحميل
+
+sudo kubeadm join 10.240.0.10:6443 --token on86nm.whp7yw5ylwbkqcdb \
+        --discovery-token-ca-cert-hash sha256:3c2d2af8b961b955cb548bfc4ae9ce18c8fd09bd2669c0371d30027797d5b7bf 
+
+
+--------------------------------------------------------------
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+Alternatively, if you are the root user, you can run:
+
+  export KUBECONFIG=/etc/kubernetes/admin.conf
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 10.240.0.10:6443 --token on86nm.whp7yw5ylwbkqcdb \
+        --discovery-token-ca-cert-hash sha256:3c2d2af8b961b955cb548bfc4ae9ce18c8fd09bd2669c0371d30027797d5b7bf 
+        
+root@instance-master:~# 
+
+
+# ------------------------ install k9s 
+install it normally from the official website
+
+https://v1-28.docs.kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+becarfull you need to remove this line  "disabled_plugins = ["cri"]" from this file /etc/containerd/config.toml 
+
+
+
+this link will be help
+https://kubernetes.io/docs/setup/production-environment/container-runtimes/#cri-o

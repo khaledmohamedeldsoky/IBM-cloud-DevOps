@@ -1,0 +1,11 @@
+---
+- hosts: master
+  roles:
+   - docker 
+   - k9s
+
+
+- hosts: node
+  roles:
+   - docker
+   - k9s

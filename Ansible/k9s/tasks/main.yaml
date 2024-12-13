@@ -1,0 +1,70 @@
+---
+- name: Install packages needed 
+  ansible.builtin.apt:
+    name:  
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gpg
+
+- name: Make dir for key
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: 0755
+
+- name: Download the public signing key
+  ansible.builtin.apt_key:
+    url: https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key
+    state: present
+
+- name: Add the appropriate Kubernetes apt repository
+  ansible.builtin.apt_repository:
+    repo: deb https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /
+    state: present
+
+- name: Update  packages
+  ansible.builtin.apt:
+    update_cache: yes
+    force: yes
+
+- name: Install kubelet, kubeadm and kubectl
+  ansible.builtin.apt:
+    name:
+      - kubelet
+      - kubeadm
+      - kubectl
+
+- name: Enable the kubelet service before running kubeadm
+  ansible.builtin.service:
+    name: kubelet
+    enabled: yes
+
+# ----------------------- Auto-Complete
+
+- name: Auto Complete kube
+  ansible.builtin.apt:
+    name: bash-completion
+    state: present
+
+- name: Add kubectl completion script to .bashrc
+  ansible.builtin.lineinfile:
+    path: /home/ubuntu/.bashrc
+    line: 'source <(kubectl completion bash)'
+
+- name: Apply changes to .bashrc
+  ansible.builtin.shell: 'source /home/ubuntu/.bashrc'
+  args: 
+    executable: /bin/bash
+
+# ----------------------- Enable containerd
+- name: reload Daemon
+  ansible.builtin.systemd_service:
+    daemon_reload: true
+    
+
+- name: Enable containerd
+  ansible.builtin.service:
+    name: containerd
+    enabled: yes
+    state: started
