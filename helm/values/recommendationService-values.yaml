@@ -5,7 +5,7 @@ imageVersion: sample-public-image-v0.10.2
 containerEnv:
   - name: PORT
     value: "8080"
-  - name: PRODUCT_CATALOG_SERVICE_ADD
+  - name: PRODUCT_CATALOG_SERVICE_ADDR
     value: "productcatalogservice:3550"
 
 servicePort: 8080
