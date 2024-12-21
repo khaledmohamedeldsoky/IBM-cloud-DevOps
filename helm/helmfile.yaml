@@ -2,54 +2,54 @@
   - name: adservice
     chart: charts/microservice
     values: 
-      - values/adservice-values.yml
+    - values/adservice-values.yml
 
   - name: cartservice
     chart: charts/microservice
     values: 
-      - values/cartservice-values.yaml
+    - values/cartservice-values.yaml
 
   - name: checkoutservice
     chart: charts/microservice
     values: 
-      - values/checkoutService-values.yaml
+    - values/checkoutService-values.yaml
 
   - name: currencyservice
     chart: charts/microservice
     values: 
-      - values/cuurencyService-values.yaml
+    - values/cuurencyService-values.yaml
 
   - name: emailservice
     chart: charts/microservice
     values: 
-      - values/emailService-values.yaml
+    - values/emailService-values.yaml
 
   - name: forntendservice
     chart: charts/microservice
     values: 
-      - values/frontend-values.yaml
+    - values/frontend-values.yaml
     
   - name: paymentservice
     chart: charts/microservice
     values: 
-     - values/paymentService-values.yaml
+    - values/paymentService-values.yaml
 
   - name: productcatalogservice
     chart: charts/microservice
     values: 
-     - values/productCatalogService-values.yaml
+    - values/productCatalogService-values.yaml
 
   - name: recommendationservice
     chart: charts/microservice
     values: 
-     - values/recommendationService-values.yaml
+    - values/recommendationService-values.yaml
 
   - name: shippingservice
     chart: charts/microservice
     values: 
-     - values/shippingService-values.yaml
+    - values/shippingService-values.yaml
 
   - name: redis
     chart: charts/redis
     values: 
-     - values/redis-values.yaml
+    - values/redis-values.yaml
