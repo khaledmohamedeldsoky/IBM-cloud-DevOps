@@ -1,0 +1,9 @@
+appName: adservice
+containerPort: 9555
+imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/adservice
+imageVersion: sample-public-image-v0.10.2
+containerEnv:
+  - name: PORT
+    value: "9555"
+
+servicePort: 9555

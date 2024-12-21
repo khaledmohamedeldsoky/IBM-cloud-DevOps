@@ -1,0 +1,29 @@
+- name: Update package
+  ansible.builtin.apt:
+    update-cache: yes
+
+- name: Install NFS
+  ansible.builtin.apt:
+    name:
+      - nfs-kernel-server
+    state: present
+
+- name: start NFS
+  ansible.builtin.service:
+    name: nfs-kernel-server.service
+    state: started
+    enabled: yes
+
+- name: Create dir for NFS
+  ansible.builtin.file:
+    path: "{{ nfs_server_shared_directory }}"
+    state: directory
+    mode: 0755
+
+- name: configure the directories to be exported by adding them to the /etc/exports file
+  ansible.builtin.lineinfile:
+    path: /etc/exports
+    line: "{{ nfs_server_shared_directory }} {{nfs_server_client_access}}"
+
+- name: Export NFS share
+  command: exportfs -a

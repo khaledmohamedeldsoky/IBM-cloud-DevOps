@@ -1,11 +1,13 @@
 ---
+
 - hosts: master
   roles:
-   - docker 
-   - k9s
+  #  - docker 
+  #  - k9s
+   - NFS-client
 
 
-- hosts: node
-  roles:
-   - docker
-   - k9s
+# - hosts: node
+#   roles:
+#    - docker
+#    - k9s

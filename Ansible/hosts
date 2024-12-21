@@ -4,3 +4,6 @@ bastion
 [node]
 privateinstance1
 privateinstance2
+
+[local]
+localhost ansible_connection=local

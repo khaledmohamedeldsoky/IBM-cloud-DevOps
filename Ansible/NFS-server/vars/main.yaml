@@ -1,0 +1,2 @@
+nfs_server_shared_directory:  "/home/ubuntu/NFS"
+nfs_server_client_access: " 52.118.148.78/32(rw,sync,no_subtree_check)"

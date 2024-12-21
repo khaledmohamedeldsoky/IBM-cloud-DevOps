@@ -1,0 +1,11 @@
+appName: recommendationservice
+containerPort: 8080
+imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/recommendationservice
+imageVersion: sample-public-image-v0.10.2
+containerEnv:
+  - name: PORT
+    value: "8080"
+  - name: PRODUCT_CATALOG_SERVICE_ADD
+    value: "productionCatalogService:3550"
+
+servicePort: 8080

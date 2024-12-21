@@ -1,0 +1,12 @@
+appName: productioncatalogservice
+containerPort: 3550
+imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/productioncatalogservice
+imageVersion: sample-public-image-v0.10.2
+containerEnv:
+  - name: PORT
+    value: "3550"
+  - name: DISABLE_PROFILER
+    value: "1"
+
+
+servicePort: 3550

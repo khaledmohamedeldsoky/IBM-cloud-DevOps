@@ -1,3 +1,6 @@
 .terraform*
 ssh_public_key
 .vscode
+git-hub
+note*
+chatgpt*

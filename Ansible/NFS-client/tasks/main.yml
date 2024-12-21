@@ -1,0 +1,17 @@
+- name: Install NFS
+  apt:
+    name:
+      - nfs-common
+    state: present
+
+- name: mkdir for nfs
+  ansible.builtin.file:
+    path: "{{ nfs_client_mount_point }}"
+    state: directory
+
+- name: mount 
+  ansible.posix.mount:
+    path: "{{ nfs_client_mount_point }}"
+    src: "{{ nfs_server_address }}:{{ nfs_server_shared_directory }}"
+    fstype: nfs
+    state: mounted

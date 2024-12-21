@@ -1,0 +1,12 @@
+---
+appName: khaled
+containerPort: 8080
+imageName: nginx
+imageVersion: lastest
+appReplicas: 1
+containerPort:
+- envName: khaled
+  envValue: mohamed
+
+serviceType: ClusterIP
+servicePort: 8080
