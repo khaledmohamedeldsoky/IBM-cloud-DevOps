@@ -5,5 +5,5 @@ appVersion: alpine
 volumeName: redis-data
 containerMountPath: /data
 
-service: 6379
+servicePort: 6379
 containerPort: 6379
