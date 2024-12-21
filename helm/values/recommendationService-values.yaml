@@ -6,6 +6,6 @@ containerEnv:
   - name: PORT
     value: "8080"
   - name: PRODUCT_CATALOG_SERVICE_ADD
-    value: "productionCatalogService:3550"
+    value: "productcatalogservice:3550"
 
 servicePort: 8080
