@@ -23,7 +23,7 @@ spec:
         - containerPort: {{ .Values.containerPort }}
         env:
         {{- range .Values.containerEnv -}}
-          - name: {{ .envName }}
-            value: {{ .envValue | quote }}
+        - name: {{ .envName }}
+          value: {{ .envValue | quote }}
         {{- end -}}
  
