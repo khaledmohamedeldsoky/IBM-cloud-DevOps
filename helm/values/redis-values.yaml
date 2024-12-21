@@ -1,8 +1,9 @@
 appName: redis-cart
-containerName: 6379
+containerName: redis-cart
 appImage: redis
 appVersion: alpine
 volumeName: redis-data
 containerMountPath: /data
 
 service: 6379
+containerPort: 6379
