@@ -4,7 +4,8 @@
   roles:
   #  - docker 
   #  - k9s
-   - NFS-client
+  #  - NFS-client
+    - helm
 
 
 # - hosts: node

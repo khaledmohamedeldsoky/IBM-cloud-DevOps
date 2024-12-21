@@ -42,3 +42,4 @@
   - name: redis
     chart: charts/redis
     values: values/redis-values.yaml
+

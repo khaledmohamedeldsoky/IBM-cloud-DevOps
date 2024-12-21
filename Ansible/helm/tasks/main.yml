@@ -1,0 +1,25 @@
+- name: add gpg key 
+  ansible.builtin.apt_key:
+    url:  https://baltocdn.com/helm/signing.asc
+    state: present
+
+- name: install requiremnt
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+    state: present
+
+- name: add
+  ansible.builtin.apt_repository:
+    repo: deb https://baltocdn.com/helm/stable/debian/ all main
+    state: present
+
+- name: update
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: install helm 
+  ansible.builtin.apt:
+    name:
+      - helm
+    state: present
