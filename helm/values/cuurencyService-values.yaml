@@ -3,7 +3,7 @@ containerPort: 7000
 imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/currencyservice
 imageVersion: sample-public-image-v0.10.2
 containerEnv:
-  - name: PORT
-    value: "7000"
+  - envName: PORT
+    envvalue: "7000"
 
 servicePort: 7000

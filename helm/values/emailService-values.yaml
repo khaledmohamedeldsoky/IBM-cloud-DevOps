@@ -3,8 +3,8 @@ containerPort: 8080
 imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/emailservice
 imageVersion: sample-public-image-v0.10.2
 containerEnv:
-  - name: PORT
-    value: "8080" #container port
+  - envName: PORT
+    envvalue: "8080" #container port
 
 
 servicePort: 5000
