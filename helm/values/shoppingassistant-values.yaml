@@ -1,0 +1,9 @@
+appName: shoppingassistantservice
+containerPort: 8000
+imageName:  us-central1-docker.pkg.dev/google-samples/microservices-demo/shoppingassistantservice
+imageVersion: sample-public-image-v0.10.2
+containerEnv:
+  - envName: PORT
+    envValue: "8000"
+
+servicePort: 8000

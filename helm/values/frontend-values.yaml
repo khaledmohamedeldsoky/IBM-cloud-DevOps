@@ -26,6 +26,9 @@ containerEnv:
     
   - envName: AD_SERVICE_ADDR
     envValue: "adservice:9555"
+  
+  - envName: SHOPPING_ASSISTANT_SERVICE_ADDR
+    envValue: "shoppingassistantservice:8000"
 
 
 serviceType: LoadBalancer
