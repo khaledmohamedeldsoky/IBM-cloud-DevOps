@@ -1,7 +1,7 @@
 appName: recommendationservice
 containerPort: 8080
 imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/recommendationservice
-imageVersion: sample-public-image-v0.10.2
+imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
     envvalue: "8080"

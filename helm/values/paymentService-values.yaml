@@ -1,7 +1,7 @@
 appName: paymentservice
 containerPort: 50051
 imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/paymentservice
-imageVersion: sample-public-image-v0.10.2
+imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
     envvalue: "50051"
