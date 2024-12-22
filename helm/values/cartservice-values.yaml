@@ -6,5 +6,4 @@ containerEnv:
   - envName: PORT
     envvalue: "7070"
 
-
 servicePort: 7070

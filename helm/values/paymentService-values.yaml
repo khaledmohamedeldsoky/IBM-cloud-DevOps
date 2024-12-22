@@ -3,10 +3,10 @@ containerPort: 50051
 imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/paymentservice
 imageVersion: v0.10.1
 containerEnv:
-  - envName: PORT
-    envvalue: "50051"
-  - envName: DISABLE_PROFILER
-    envvalue: "1"
+- envName: PORT
+  envvalue: "50051"
+- envName: DISABLE_PROFILER
+  envvalue: "1"
 
 
 servicePort: 50051

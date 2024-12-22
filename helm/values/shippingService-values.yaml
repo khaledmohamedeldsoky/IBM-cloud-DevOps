@@ -1,6 +1,6 @@
 appName: shippingservice
 containerPort: 50051
-imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/shippingervice
+imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/shippingservice
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
