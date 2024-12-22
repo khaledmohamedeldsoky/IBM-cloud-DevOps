@@ -16,7 +16,7 @@ containerEnv:
     envValue: "cartservice:7070"
 
   - envName: RECOMMENDATION_SERVICE_ADDR
-    envValue: "remommendationservice:8080"
+    envValue: "recommendationservice:8080"
 
   - envName: SHIPPING_SERVICE_ADDR
     envValue: "shippingservice:50052"
@@ -26,8 +26,7 @@ containerEnv:
     
   - envName: AD_SERVICE_ADDR
     envValue: "adservice:9555"
-    
-  - envName: DISABLE_PROFILER
-    envValue: "1"
+
+
 serviceType: LoadBalancer
 servicePort: 80
