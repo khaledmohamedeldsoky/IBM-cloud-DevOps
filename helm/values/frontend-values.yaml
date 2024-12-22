@@ -26,6 +26,8 @@ containerEnv:
     
   - envName: AD_SERVICE_ADDR
     envValue: "adservice:9555"
-
+    
+  - envName: DISABLE_PROFILER
+    envValue: "1"
 serviceType: LoadBalancer
 servicePort: 80
