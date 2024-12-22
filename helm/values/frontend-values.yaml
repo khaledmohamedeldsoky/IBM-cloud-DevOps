@@ -5,18 +5,25 @@ imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
     envValue: "8080"
+
   - envName: PRODUCT_CATALOG_SERVICE_ADDR
     envValue: "productcatalogservice:3550"
+
   - envName: CURRENCY_SERVICE_ADDR
     envValue: "currencyservice:7000"
+
   - envName: CART_SERVICE_ADDR
     envValue: "cartservice:7070"
+
   - envName: RECOMMENDATION_SERVICE_ADDR
     envValue: "remommendationservice:8080"
+
   - envName: SHIPPING_SERVICE_ADDR
     envValue: "shippingservice:50052"
+
   - envName: CHECKOUT_SERVICE_ADDR
     envValue: "checkoutservice:5050"
+    
   - envName: AD_SERVICE_ADDR
     envValue: "adservice:9555"
 

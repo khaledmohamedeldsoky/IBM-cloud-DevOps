@@ -7,7 +7,7 @@ containerEnv:
     envValue: "5050"
     
   - envName: PRODUCT_CATALOG_SERVICE_ADDR
-    envvalue: "productcatalogservice:3550"
+    envValue: "productcatalogservice:3550"
 
   - envName: SHIPPING_SERVICE_ADDR
     envValue: "shippingservice:50052"
