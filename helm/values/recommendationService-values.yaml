@@ -4,8 +4,8 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/recommen
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-  - envvalue: "8080"
+    envValue: "8080"
   - envName: PRODUCT_CATALOG_SERVICE_ADDR
-  - envvalue: "productcatalogservice:3550"
+    envValue: "productcatalogservice:3550"
 
 servicePort: 8080

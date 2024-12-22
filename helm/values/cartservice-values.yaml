@@ -4,6 +4,10 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/cartserv
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-    envvalue: "7070"
+    envValue: "7070"
+  - envName: REDIS_HOST
+    envValue: "redis-cart" # Name of the Redis service
+  - envName: REDIS_PORT
+    envValue: "6379"
 
 servicePort: 7070

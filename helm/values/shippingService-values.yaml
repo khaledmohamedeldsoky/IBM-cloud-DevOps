@@ -4,6 +4,6 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/shipping
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-    envvalue: "50051"
+    envValue: "50051"
 
 servicePort: 50052

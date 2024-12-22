@@ -4,21 +4,21 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-    envvalue: "8080"
+    envValue: "8080"
   - envName: PRODUCT_CATALOG_SERVICE_ADDR
-    envvalue: "productcatalogservice:3550"
+    envValue: "productcatalogservice:3550"
   - envName: CURRENCY_SERVICE_ADDR
-    envvalue: "currencyservice:7000"
+    envValue: "currencyservice:7000"
   - envName: CART_SERVICE_ADDR
-    envvalue: "cartservice:7070"
+    envValue: "cartservice:7070"
   - envName: RECOMMENDATION_SERVICE_ADDR
-    envvalue: "remommendationservice:8080"
+    envValue: "remommendationservice:8080"
   - envName: SHIPPING_SERVICE_ADDR
-    envvalue: "shippingservice:50052"
+    envValue: "shippingservice:50052"
   - envName: CHECKOUT_SERVICE_ADDR
-    envvalue: "checkoutservice:5050"
+    envValue: "checkoutservice:5050"
   - envName: AD_SERVICE_ADDR
-    envvalue: "adservice:9555"
+    envValue: "adservice:9555"
 
 serviceType: LoadBalancer
 servicePort: 80

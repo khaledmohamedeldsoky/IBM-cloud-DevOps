@@ -4,6 +4,6 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/currency
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-    envvalue: "7000"
+    envValue: "7000"
 
 servicePort: 7000

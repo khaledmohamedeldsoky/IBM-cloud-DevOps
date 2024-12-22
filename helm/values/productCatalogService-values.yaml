@@ -4,9 +4,9 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/productc
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-    envvalue: "3550"
+    envValue: "3550"
   - envName: DISABLE_PROFILER
-    envvalue: "1"
+    envValue: "1"
 
 
 servicePort: 3550

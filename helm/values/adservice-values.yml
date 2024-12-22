@@ -4,6 +4,6 @@ imageName: us-central1-docker.pkg.dev/google-samples/microservices-demo/adservic
 imageVersion: v0.10.1
 containerEnv:
   - envName: PORT
-    envvalue: "9555"
+    envValue: "9555"
 
 servicePort: 9555
