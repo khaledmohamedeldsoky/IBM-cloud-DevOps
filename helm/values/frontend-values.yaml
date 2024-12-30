@@ -31,5 +31,5 @@ containerEnv:
     envValue: "shoppingassistantservice:8000"
 
 
-serviceType: LoadBalancer
+serviceType: NodePort
 servicePort: 80

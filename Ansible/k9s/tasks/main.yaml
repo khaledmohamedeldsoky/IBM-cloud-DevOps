@@ -15,12 +15,12 @@
 
 - name: Download the public signing key
   ansible.builtin.apt_key:
-    url: https://pkgs.k8s.io/core:/stable:/v1.28/deb/Release.key
+    url: https://pkgs.k8s.io/core:/stable:/v1.31/deb/Release.key
     state: present
 
 - name: Add the appropriate Kubernetes apt repository
   ansible.builtin.apt_repository:
-    repo: deb https://pkgs.k8s.io/core:/stable:/v1.28/deb/ /
+    repo: deb https://pkgs.k8s.io/core:/stable:/v1.31/deb/ /
     state: present
 
 - name: Update  packages
