@@ -14,15 +14,15 @@ variable "SGR_tcp" {
   }))
 }
 
-# variable "SGR_udp" {
-#   type = map(object({
-#     group     = string
-#     direction = string
-#     remote    = string
-#     port_max  = number
-#     port_min  = number
-#   }))
-# }
+variable "SGR_udp" {
+  type = map(object({
+    group     = string
+    direction = string
+    remote    = string
+    port_max  = number
+    port_min  = number
+  }))
+}
 
 variable "SGR_icmp" {
   type = map(object({

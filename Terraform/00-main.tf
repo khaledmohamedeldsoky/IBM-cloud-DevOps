@@ -85,7 +85,17 @@ module "security" {
 
 
   SGR_tcp = {
-    for rule in local.all_rules : "${rule.group_name}_${rule.direction}_${rule.name}" => {
+    for rule in local.TCP : "${rule.group_name}_${rule.direction}_${rule.name}" => {
+      group     = module.security.security_group["${rule.group_name}"].id
+      direction = "${rule.direction}"
+      remote    = "${rule.remote}"
+      port_max  = "${rule.port_max}"
+      port_min  = "${rule.port_min}"
+    }
+  }
+
+    SGR_udp = {
+    for rule in local.UDP : "${rule.group_name}_${rule.direction}_${rule.name}" => {
       group     = module.security.security_group["${rule.group_name}"].id
       direction = "${rule.direction}"
       remote    = "${rule.remote}"

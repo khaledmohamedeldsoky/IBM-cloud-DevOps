@@ -23,19 +23,19 @@ resource "ibm_is_security_group_rule" "SGR_tcp" {
   # tags = ["Name:SGR_tcp_${each.key}"]
 }
 
-# resource "ibm_is_security_group_rule" "SGR_udp" {
+resource "ibm_is_security_group_rule" "SGR_udp" {
 
-#   for_each  = var.SGR_udp
-#   group     = each.value.group.id
-#   direction = each.value.direction
-#   remote    = each.value.remote
+  for_each  = var.SGR_udp
+  group     = each.value.group.id
+  direction = each.value.direction
+  remote    = each.value.remote
 
-#   udp {
-#     port_max = each.value.port_max
-#     port_min = each.value.port_min
-#   }
+  udp {
+    port_max = each.value.port_max
+    port_min = each.value.port_min
+  }
 
-# }
+}
 
 resource "ibm_is_security_group_rule" "SGR_icmp" {
 

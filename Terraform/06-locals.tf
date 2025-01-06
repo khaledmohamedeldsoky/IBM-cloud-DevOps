@@ -5,24 +5,26 @@ locals {
 
   public_ip_master = data.ibm_is_floating_ip.public_ip_master.address
 
-  all_rules = [
+  TCP = [
 
     # ----------------------------- master  ----------------------------- #
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "ssh", port_min = 22, port_max = 22 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "DNS", port_min = 53, port_max = 53 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "http", port_min = 80, port_max = 80 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "https", port_min = 443, port_max = 443 },
+    { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "2379", port_min = 2379, port_max = 2380 },
+    { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "6783", port_min = 6783, port_max = 6783 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "10250", port_min = 10250, port_max = 10250 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "10251", port_min = 10251, port_max = 10251 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "10252", port_min = 10252, port_max = 10252 },
-    { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "2379_to_2380", port_min = 2379, port_max = 2380 },
-
-
-
+    
+    
+ 
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "ssh", port_min = 22, port_max = 22 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "DNS", port_min = 53, port_max = 53 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "http", port_min = 80, port_max = 80 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "https", port_min = 443, port_max = 443 },
+    { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "6783", port_min = 6783, port_max = 6783 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "10250", port_min = 10250, port_max = 10250 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "10251", port_min = 10251, port_max = 10251 },
     { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "10252", port_min = 10252, port_max = 10252 },
@@ -32,6 +34,7 @@ locals {
     { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "DNS", port_min = 53, port_max = 53 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "http", port_min = 80, port_max = 80 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "https", port_min = 443, port_max = 443 },
+    { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "6783", port_min = 6783, port_max = 6783 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "10250", port_min = 10250, port_max = 10250 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "10251", port_min = 10251, port_max = 10251 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "10252", port_min = 10252, port_max = 10252 },
@@ -42,6 +45,7 @@ locals {
     { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "DNS", port_min = 53, port_max = 53 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "http", port_min = 80, port_max = 80 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "https", port_min = 443, port_max = 443 },
+    { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "6783", port_min = 6783, port_max = 6783 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "10250", port_min = 10250, port_max = 10250 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "10251", port_min = 10251, port_max = 10251 },
     { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "10252", port_min = 10252, port_max = 10252 },
@@ -74,4 +78,19 @@ locals {
 
   ]
 
+  UDP = [
+
+    # ----------------------------- master  ----------------------------- #
+    { group_name = "master", remote = "0.0.0.0/0", direction = "inbound", name = "6783", port_min = 6783, port_max = 6783 },
+
+    { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "6783", port_min = 6783, port_max = 6783 },
+    { group_name = "master", remote = "0.0.0.0/0", direction = "outbound", name = "6784", port_min = 6783, port_max = 6784 },
+    
+    # ----------------------------- node  ----------------------------- #
+    { group_name = "node", remote = "0.0.0.0/0", direction = "inbound", name = "6783", port_min = 6783, port_max = 6783 },
+
+    { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "6783", port_min = 6783, port_max = 6783 },
+    { group_name = "node", remote = "0.0.0.0/0", direction = "outbound", name = "6784", port_min = 6783, port_max = 6784 },
+  ]
+    
 }

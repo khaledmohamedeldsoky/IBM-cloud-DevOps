@@ -1,5 +1,0 @@
-# to show the output
-terraform output
-
-# aplly changes
-terraform plan -var-file="01-prod.tfvars" 
